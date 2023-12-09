@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>NodeJS: {{title}}</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<script language="javascript">
+    function deleteProduct() {
+        alert('운동 삭제.');
+    }
+</script>
+
+<body>
+<div class="container">
+
+<h1>활동 추적 관리</h1>
+    <form id="form" action="http://localhost:{{port}}/activity/running" method="get">
+        <button style="height: 40px;width: 157px; background-color: peachpuff" type="submit">러닝 시작</button>
+    </form>
+    <br>
+    <form id="form" action="http://localhost:{{port}}/activity/create" method="get">
+        <button style="height:40px;width: 157px; background-color: peachpuff" type="submit">운동량 추가</button>
+    </form>
+    <br>
+    <form id="form" action="http://localhost:{{port}}/activity/update" method="get">
+        <button style="height:40px;width: 157px; background-color: peachpuff" type="submit">운동량 수정</button>
+    </form>
+    <br>
+    <form id="form" action="http://localhost:{{port}}/activity/delete" method="get">
+        <button style="height:40px;width: 157px; background-color: peachpuff" type="submit">운동량 삭제</button>
+    </form>
+    <br><br>
+
+    <form id="form" action="" method="get">
+        <button style="width: 60px; background-color: peachpuff" type="button" onclick="location.href='http://localhost:{{port}}'" >홈으로</button>
+        <button style="width: 60px; background-color: peachpuff" type="button" onclick="location.href='http://localhost:{{port}}/activity/view'" >조회</button>
+    </form><br>
+</div>
+</body>
+
+</html>

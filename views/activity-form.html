@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NodeJs: {{title}}</title>
+</head>
+<body>
+<h1>운동량 정보 {{ api }}</h1>
+<form action="/activity/{{api}}" method="post">
+    <label for="activityType">운동 종류: </label>
+    <input type="text" id="activityType" name="activityType" required>
+    <label for="activityPlace">운동 장소: </label>
+    <input type="text" id="activityPlace" name="activityPlace" required>
+    <button type="submit">{{api}}하기</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>NodeJS: {{title}}</title>
+</head>
+<script language="javascript">
+    function delete_food() {
+        alert(`건강식품이 삭제되었습니다.`);
+    }
+</script>
+
+<body>
+    <form id="form" action="" method="get">
+        <button style="width: 60px" type="button" onclick="location.href='http://localhost:{{port}}'" >홈으로</button>
+    </form> <br>
+    사용자: {{name}}<br><br>
+
+    <form id="form" action="http://localhost:{{port}}/healthFood/create" method="get">
+        <button style="width: 200px; height: 40px" type="submit">건강 식품 생성하기!</button>
+    </form>
+    <br>
+
+    {% for food in foods %}
+    {% if food.description.startsWith('http') %}
+    <img src="{{food.description}}" width="100" height="100"><br>
+    {% endif %}
+    
+    <form id="form" action="/activity/info/{{food.healthFoodId}}" method="get">
+        <button style="height:80px;width:200px" type="submit">
+            건강식품 아이디: {{food.healthFoodId}} <br>
+            건강식품 이름: {{food.healthFoodName}} <br>
+        </button>
+        <br>
+    </form>
+    
+    <form id="form" action="http://localhost:{{port}}/healthFood/update/{{food.healthFoodId}}" method="get">
+        <button style="width: 200px" type="submit" >건강 식품 정보 수정하기</button>
+    </form>
+
+    <form id="form" action="http://localhost:{{port}}/healthFood/delete/{{food.healthFoodId}}" method="post">
+        <button style="width: 200px" type="submit" onclick=delete_food() >이 건강 식품 제거하기</button><br><br>
+    </form>
+    {% endfor %}
+
+</body>
+
+</html>

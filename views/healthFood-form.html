@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NodeJs: {{title}}</title>
+</head>
+<body>
+<h1>건강 식품 정보 {{api}}</h1>
+<form action="/healthFood/{{api}}" method="post">
+    <label for="healthFoodName">건강 식품 이름:</label>
+    <input type="text" id="healthFoodName" name="healthFoodName" required>
+    <button type="submit">{{api}}하기</button>
+</form>
+</body>
+</html>
