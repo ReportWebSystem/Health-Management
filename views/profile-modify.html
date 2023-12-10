@@ -3,15 +3,32 @@
 
 <head>
     <title>NodeJS: {{title}}</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
+<div class="container">
     {% if api == update %}
     <form id="form" action="http://localhost:{{port}}" method="get">
         <button style="width: 60px" type="submit">홈으로</button>
     </form><br>
     {% endif %}
-
+</div>
+<div class="container">
     <form id="form" action="" method="post">
         <h3>프로필 {{api}}</h3>
         <label for="profileInfoDate"><b>오늘의 날짜를 선택해주세요</b></label><br><br>
@@ -47,10 +64,11 @@
             <option value="" disabled selected>선택하세요</option>
             <option value="yes" selected>yes</option>
             <option value="no" selected>no</option>
-        </select><br>
+        </select><br><br>
 
-        <button style="width:210px" type="submit">프로필 {{api}}하기!</button>
+        <button style="height: 40px; width:220px; background-color: peachpuff" type="submit">프로필 {{api}}하기!</button>
     </form>
+</div>
 </body>
 
 </html>

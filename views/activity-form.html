@@ -2,15 +2,32 @@
 <html>
 <head>
     <title>NodeJs: {{title}}</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
 <h1>운동량 정보 {{ api }}</h1>
 <form action="/activity/{{api}}" method="post">
     <label for="activityType">운동 종류: </label>
     <input type="text" id="activityType" name="activityType" required>
     <label for="activityPlace">운동 장소: </label>
-    <input type="text" id="activityPlace" name="activityPlace" required>
-    <button type="submit">{{api}}하기</button>
+    <input type="text" id="activityPlace" name="activityPlace" required><br><br>
+    <button type="submit" style="height: 40px; width: 220px; background-color: peachpuff">{{api}}하기</button>
 </form>
+</div>
 </body>
 </html>

@@ -306,41 +306,4 @@ router.get('/view', isLoggedIn, async (req, res, next) => {
     }
 });
 
-// router.route('/running/:activityId')
-//     .post(async (req, res, next) => {
-//         const activityId = req.params.activityId;
-//         const { activityPlace, activityType, distance, runtime } = req.body;
-//         try {
-//             const result = await Activity.create({
-//                 activityPlace,
-//                 activityType,
-//                 distance,
-//                 runtime
-//             }, {
-//                 where: { activityId }
-//             });
-//
-//             if (result) {
-//                 res.status(200).json({
-//                     result: 'success',
-//                     error: null,
-//                     data: null
-//                 });
-//             } else {
-//                 res.json({
-//                     result: 'fail',
-//                     error: '러닝 정보 생성 실패',
-//                     data: null
-//                 });
-//             }
-//         } catch (err) {
-//             console.error(err);
-//             next(err);
-//         }
-//     });
-
-
-
-
-
 module.exports = router;

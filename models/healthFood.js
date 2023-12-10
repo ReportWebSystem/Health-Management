@@ -29,7 +29,7 @@ module.exports = class HealthFood extends Sequelize.Model {
     }
 
     static associate(db) {
-        // users 테이블에서 어떤 컬럼을 참조할 것인가? => users 테이블의 id를 참조하며, comments 테이블에 userId 컬럼에 저장함.
+        // users 테이블에서 어떤 컬럼을 참조할 것인가? => users 테이블의 id를 참조하며, healthFoods 테이블에 userId 컬럼에 저장함.
         db.HealthFood.belongsTo(db.User, { foreignKey: 'userId', targetKey: 'userId' });
     }
 };

@@ -34,5 +34,3 @@ ActivityTracker.associate(db);
 Profile.associate(db);
 
 module.exports = db;
-
-

@@ -3,20 +3,36 @@
 
 <head>
     <title>NodeJS: {{title}}</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
-    <form id="form" action="" method="get">
-        <button style="width: 60px" type="button" onclick="location.href='http://localhost:{{port}}'" >홈으로</button>
-        <button style="width: 60px" type="button" onclick="location.href='http://localhost:{{port}}/healthFood'" >뒤로</button>
-    </form><br>
-
+<div class="container">
     <form id="form" action="/healthFood/{{api}}/{{healthFoodId}}" method="post">
         건강식품 정보{{api}}<br>
         <input style="width:200px" type="text" name="healthFoodName" placeholder="Name" required/><br>
-        <input style="width:200px" type="text" name="description" placeholder="description" /><br>
-        <button style="width:200px" type="submit">{{api}}하기!</button>
-    </form>
+        <input style="width:200px" type="text" name="description" placeholder="description" /><br><br>
+        <button style="width:200px; background-color: peachpuff" type="submit">{{api}}하기!</button>
+    </form><br><br>
+    <form id="form" action="" method="get">
+        <button style="width: 60px; background-color: peachpuff" type="button" onclick="location.href='http://localhost:{{port}}'" >홈으로</button>
+        <button style="width: 60px; background-color: peachpuff" type="button" onclick="location.href='http://localhost:{{port}}/healthFood'" >뒤로</button>
+    </form><br>
+</div>
 </body>
 
 </html>

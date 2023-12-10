@@ -32,8 +32,9 @@ module.exports = class User extends Sequelize.Model {
         });
     }
 
-    // 관계 설정함. db.User.hasMany(db.Comment) => User : Comment = 1 : N 관계라는 뜻
-    // User 객체가(users 테이블이) Comment객체를(comments 테이블을) 다수 갖고 있다.
+    // 관계 설정함. db.User.hasMany(db.HealthFood) => User : HealthFood = 1 : N 관계라는 뜻
+    // 관계 설정함. db.User.hasMany(db.ActivityTracker) => User : ActivityTracker = 1 : N 관계라는 뜻
+    // User 객체가(users 테이블이) HealthFood 객체와 ActivityTracker 객체를 (healthFoods, activityTracker 테이블을) 다수 갖고 있다.
     static associate(db) {
         // comments 테이블에 foreignKey로 제공할 users 테이블의 sourceKey: id
         db.User.hasMany(db.HealthFood, { foreignKey: 'userId', sourceKey: 'userId', onDelete: 'cascade' });
